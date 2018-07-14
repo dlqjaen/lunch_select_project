@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  box-sizing: border-box
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.food-filter::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.version {
+  float: right;
+  opacity: 0.5;
+  font-size: 0.8rem;
+  padding-right: 10px;
+}
+
+.check-label {
+  margin-bottom: 5px;
+  background-color: rgba(26, 129, 255);
+  border-radius: 10px;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  opacity: 0.6;
+  transition: all 0.5s;
+}
+
+.check-label.active {
+  opacity: 1;
+}
+
+.option-button {
+  width: 48%;
+  margin: 5px 0 10px 0;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  background-color: rgba(216, 60, 86);
+  opacity: 0.7;
+  transition: opacity 0.5s;
+  outline: none;
+}
+
+.option-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#selecte-all {
+  float: left;
+}
+
+#shuffle {
+  float: right;
+}
+
+.card-wrap {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  transform-style: preserve-3d;
+  transition: all 0.5s;
+}
+
+@keyframes shuffle-odd {
+  0% {
+    left: 0px;
+  }
+  40% {
+    left: -130px;
+  }
+  70% {
+    left: 30px;
+  }
+  100% {
+    left: 0px;
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes shuffle-even {
+  0% {
+    left: 0px;
+  }
+  40% {
+    left: 130px;
+  }
+  70% {
+    left: -30px;
+  }
+  100% {
+    left: 0px;
+    transform: rotateZ(0deg);
+  }
+}
+
+.card:hover {
+  /* transform: rotateZ(15deg); */
+  transform: scale(1.1);
+}
+
+.card.shuffle:nth-child(odd) {
+  animation: shuffle-odd 0.5s;
+}
+
+.card.shuffle:nth-child(even) {
+  animation: shuffle-even 0.5s;
+}
+
+.card.shuffle {
+  margin-top: 0 !important;
+}
+
+.card.active {
+  transform: rotateY(180deg) scale(1.5) !important;
+  z-index: 10;
+}
+
+.protect {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.front {
+  background-image: url('./picture/food_illust.jpg');
+  background-color: pink;
+  background-position: center;
+  box-shadow: 0 1px 5px rgba(255, 255, 255, 0.7);
+  z-index: 10;
+}
+
+.card.active.front {
+  z-index: 0;
+}
+
+.back {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 400px;
+  background-image: url('./picture/frame.jpg');
+  background-position: center;
+  background-size: 100% auto;
+  background-color: white;
+  color: rgb(216, 60, 86);
+  background-repeat: no-repeat;
+  text-shadow: 0 1px 5px rgba(216, 60, 86, 0.5);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 599px) {
+  .check-label {
+    border-radius: 0;
+    padding: 15px 0;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  .wrap {
+    width: 100%;
+  }
+  .option-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 0;
+    font-size: 1.2rem;
+  }
+  .front {
+    background-size: 100% auto;
+  }
+}
+
+@media (min-width: 600px) {
+  .wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .check-label:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  .front {
+    background-size: auto 400px;
+    background-repeat: no-repeat;
+  }
+}
