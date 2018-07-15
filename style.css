@@ -37,7 +37,7 @@ input[type=checkbox] {
 
 .check-label {
   margin-bottom: 5px;
-  background-color: rgba(26, 129, 255);
+  background-color: rgb(26, 129, 255);
   border-radius: 10px;
   display: inline-block;
   width: 100%;
@@ -62,7 +62,7 @@ input[type=checkbox] {
   color: white;
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
-  background-color: rgba(216, 60, 86);
+  background-color: rgb(216, 60, 86);
   opacity: 0.7;
   transition: opacity 0.5s;
   outline: none;
@@ -132,6 +132,10 @@ input[type=checkbox] {
   /*transform: scale(1.1);*/
 }
 
+.card:hover .front{
+  box-shadow: 0 1px 10px 8px rgba(255, 255, 255, 0.7);
+}
+
 .card.shuffle:nth-child(odd) {
   animation: shuffle-odd 0.5s;
 }
@@ -145,11 +149,12 @@ input[type=checkbox] {
 }
 
 .card.active {
-  transform: rotateY(180deg) scale(1.5) !important;
+  transform: rotateY(180deg) scale(1.5) translateZ(-85px) !important;
   z-index: 10;
 }
 
 .protect {
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   position: absolute;
   top: 0;
@@ -162,7 +167,7 @@ input[type=checkbox] {
   background-image: url('./picture/food_illust.jpg');
   background-color: pink;
   background-position: center;
-  box-shadow: 0 1px 5px 3px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 1px 5px 1px rgba(255, 255, 255, 0.7);
   z-index: 10;
 }
 
