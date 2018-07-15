@@ -35,7 +35,7 @@
       , card = [] 
 
     store_list.forEach(function(value, index) {
-      card.push('<li class="card" style="margin-top: ' + index * 30 + 'px; transform:rotateZ(' + index * 5 + 'deg);">' +
+      card.push('<li class="card" style="margin-top: ' + index * 40 + 'px;">' +
         '<div class="protect front"></div>' +
         '<div class="protect back">' + value + '</div>' +
       '</li>')
