@@ -41,13 +41,20 @@ input[type=checkbox] {
   border-radius: 10px;
   display: inline-block;
   width: 100%;
-  padding: 10px 0;
+  padding: 15px 0;
+  font-size: 1.3rem;
   text-align: center;
   color: white;
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
   opacity: 0.6;
   transition: all 0.5s;
+}
+
+.check-label:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .check-label.active {
@@ -57,7 +64,8 @@ input[type=checkbox] {
 .option-button {
   width: 48%;
   margin: 5px 0 10px 0;
-  padding: 5px;
+  padding: 10px;
+  font-size: 1.2rem;
   border-radius: 5px;
   color: white;
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
@@ -129,10 +137,10 @@ input[type=checkbox] {
 
 .card:hover {
   transform: rotateZ(15deg);
-  /*transform: scale(1.1);*/
+  cursor: pointer;
 }
 
-.card:hover .front{
+.card:hover .front {
   box-shadow: 0 1px 10px 8px rgba(255, 255, 255, 0.7);
 }
 
@@ -149,44 +157,39 @@ input[type=checkbox] {
 }
 
 .card.active {
-  transform: rotateY(180deg) scale(1.5) translateZ(-85px) !important;
+  transform: rotateY(180deg) scale(1.5) translateZ(-85px);
   z-index: 10;
 }
 
 .protect {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .front {
   background-image: url('./picture/food_illust.jpg');
-  background-color: pink;
-  background-position: center;
+  background-size: auto 400px;
   box-shadow: 0 1px 5px 1px rgba(255, 255, 255, 0.7);
   z-index: 10;
 }
 
-.card.active.front {
-  z-index: 0;
-}
-
 .back {
+  background-image: url('./picture/frame.jpg');
+  background-size: 100% auto;
+  background-color: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
   text-align: center;
   font-size: 1.5rem;
   line-height: 400px;
-  background-image: url('./picture/frame.jpg');
-  background-position: center;
-  background-size: 100% auto;
-  background-color: white;
   color: rgb(216, 60, 86);
-  background-repeat: no-repeat;
   text-shadow: 0 1px 5px rgba(216, 60, 86, 0.5);
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
   transform: rotateY(180deg);
 }
 
@@ -194,49 +197,24 @@ input[type=checkbox] {
   .version {
     margin-top: 20px;
   }
-  .check-label {
-    /*border-radius: 0;*/
-    padding: 15px 0;
-    width: 100%;
-    font-size: 1.5rem;
-  }
   .wrap {
     width: 80%;
     margin: 0 auto;
   }
-  .card {
-    width: 100%;
-  }
   .option-button {
     width: 100%;
-    padding: 10px;
-    border-radius: 0;
-    font-size: 1.2rem;
   }
   .front {
     background-size: 100% auto;
-  }
-  .check-label:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
-    cursor: pointer;
   }
 }
 
 @media (min-width: 600px) {
   .wrap {
     position: absolute;
+    width: 285px;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-  }
-  .check-label:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
-    cursor: pointer;
-  }
-  .front {
-    background-size: auto 400px;
-    background-repeat: no-repeat;
   }
 }
