@@ -44,6 +44,7 @@
 
     $('.card').on('click', function (e) {
       $(this).addClass('active');
+
     })
   }
   
@@ -63,16 +64,19 @@
   /* 이벤트 바인딩 */
   $('input[name=food-style]').on('change', function(){
     $(this.labels).toggleClass('active')
+
     setStoreList();
     createCard();
   });
 
   $('button#selecte-all').on('click', function() {
     var $not_selected = $('input[name=food-style]:not(:checked)');
-    
-    if($not_selected.length == 0) {return;}
+
+    if(!$not_selected.length) return;
+
     $not_selected.prop('checked', true);
     $('label:not(.active)').addClass('active')
+
     setAllStoreList();
     createCard();
   })
