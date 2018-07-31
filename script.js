@@ -31,20 +31,18 @@
   }
 
   function createCard() {
-    var $card_wrap = $('.card-wrap')
-      , card = [] 
+    var $card_wrap = $('.card-wrap');
 
-    store_list.forEach(function(value, index) {
-      card.push('<li class="card" style="margin-top: ' + index * 40 + 'px;">' +
+    var card = store_list.map(function(value, index) {
+      return '<li class="card" style="margin-top: ' + index * 40 + 'px;">' +
         '<div class="protect front"></div>' +
         '<div class="protect back">' + value + '</div>' +
-      '</li>')
+      '</li>'
     })
     $card_wrap.html(card.join(''))
 
     $('.card').on('click', function (e) {
       $(this).addClass('active');
-
     })
   }
   
