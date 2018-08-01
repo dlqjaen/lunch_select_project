@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Flitto-lunch</title>
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-    crossorigin="anonymous"></script>
   <link href="./style.css" rel="stylesheet">
   <link rel="icon" href="./picture/favicon-96x96.png">
   <link rel="apple-touch-icon" href="./picture/apple-icon-60x60.png">
@@ -17,21 +15,25 @@
 <body>
   <header style="display: none">Flitto-Lunch</header>
   <section class="wrap">
-    <span class="version">ver.0.0.1</span>
-    <form class="sc-food-filter food-filter" action="">
-      <label class="check-label" for="korean-food">한식</label>
-      <input type="checkbox" name="food-style" value="korea" id="korean-food">
-      <label class="check-label" for="japanese-food">일식</label>
-      <input type="checkbox" name="food-style" value="japanese" id="japanese-food">
-      <label class="check-label" for="chinese-food">중식</label>
-      <input type="checkbox" name="food-style" value="chinese" id="chinese-food">
-      <label class="check-label" for="snack_bar-food">분식</label>
-      <input type="checkbox" name="food-style" value="snack_bar" id="snack_bar-food">
-      <button type="button" class="option-button" id="selecte-all">전체선택</button>
-      <button type="button" class="option-button" id="shuffle">셔플</button>
-    </form>
+    <article class="filter-wrap">
+      <span class="version">ver.0.0.2</span>
+      <form class="sc-food-filter food-filter" action="">
+        <label class="check-label" for="korean-food">한식</label>
+        <input type="checkbox" name="food-style" value="korea" id="korean-food">
+        <label class="check-label" for="japanese-food">일식</label>
+        <input type="checkbox" name="food-style" value="japanese" id="japanese-food">
+        <label class="check-label" for="chinese-food">중식</label>
+        <input type="checkbox" name="food-style" value="chinese" id="chinese-food">
+        <label class="check-label" for="snack_bar-food">분식</label>
+        <input type="checkbox" name="food-style" value="snack_bar" id="snack_bar-food">
+        <button type="button" class="option-button" id="selecte-all">전체선택</button>
+        <button type="button" class="option-button" id="shuffle">셔플</button>
+      </form>
+    </article>
     <ul class="card-wrap sc-card-wrap"></ul>
   </section>
-  <script type="text/javascript" src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="script.js" charset="utf-8" defer></script>
 </body>
 </html>

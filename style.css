@@ -89,12 +89,6 @@ input[type=checkbox] {
   float: right;
 }
 
-.card-wrap {
-  position: relative;
-  width: 100%;
-  height: 400px;
-}
-
 .card {
   position: absolute;
   top: 0;
@@ -152,13 +146,17 @@ input[type=checkbox] {
   animation: shuffle-even 0.5s;
 }
 
-.card.shuffle {
+.card.mobile.shuffle {
   margin-top: 0 !important;
+}
+
+.card.desktop.shuffle {
+  margin-left: 230px !important;
 }
 
 .card.active {
   transform: rotateY(180deg) scale(1.5) translateZ(-85px);
-  z-index: 10;
+  z-index: 1000;
 }
 
 .protect {
@@ -177,7 +175,7 @@ input[type=checkbox] {
   background-image: url('./picture/food_illust.jpg');
   background-size: auto 400px;
   box-shadow: 0 1px 5px 1px rgba(255, 255, 255, 0.7);
-  z-index: 10;
+  z-index: 1000;
 }
 
 .back {
@@ -194,12 +192,16 @@ input[type=checkbox] {
 }
 
 @media (max-width: 599px) {
-  .version {
+  .filter-wrap{
     margin-top: 20px;
   }
   .wrap {
     width: 80%;
     margin: 0 auto;
+  }
+  .card-wrap {
+    position: relative;
+    width: 100%;
   }
   .option-button {
     width: 100%;
@@ -210,11 +212,18 @@ input[type=checkbox] {
 }
 
 @media (min-width: 600px) {
+  .filter-wrap{
+    margin-top: 100px;
+  }
   .wrap {
     position: absolute;
-    width: 285px;
-    top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%);
+  }
+  .card-wrap {
+    position: relative;
+    left: -230px;
+    width: 280px;
+    height: 400px;
   }
 }
